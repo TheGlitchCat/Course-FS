@@ -3,6 +3,17 @@
 
 Sistema de DB NoSQL orientado a documentos de código abierto
 
+
+### Instalación
+
+[Tutorial](https://docs.mongodb.com/manual/administration/install-community/)
+
+[MongoDB](https://www.mongodb.com/download-center/community)
+
+[RoboMongo](https://robomongo.org/download)
+
+[MongoDB compass](https://www.mongodb.com/download-center/compass)
+
 <!-- DOCUMENTS -->
 
 ### JSON 
@@ -60,16 +71,6 @@ Respresentación binaria de JSON
 
 MongoDB guarda los documentos BSON en colecciones, y las colecciones se almacenan en la base de datos.
 
-
-### Instalación
-
-[Tutorial](https://docs.mongodb.com/manual/administration/install-community/)
-
-[MongoDB](https://www.mongodb.com/download-center/community)
-
-[RoboMongo](https://robomongo.org/download)
-
-[MongoDB compass](https://www.mongodb.com/download-center/compass)
 
 ### Basic Commands
 
