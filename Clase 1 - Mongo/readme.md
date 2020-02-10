@@ -144,6 +144,19 @@ Lista los objetos de la colección donde age = 29
 db.<collection_name>.find( { age:29 } )
 ```
 
+Busqueda en objetos hijos
+Busca en el objeto usando un objeto que tenga atributos first = Hollie y last = Boone
+```
+db.<collection_name>.find({"name":{"first":"Hollie", "last":"Boone"}})
+```
+
+Busqueda en objetos Array
+Busca en el objeto usando un array que tenga atributos ["Action","Drama","Sci-fi"]
+```
+db.<collection_name>.find({"movies":["Action","Drama","Sci-fi"]})
+```
+
+
 Inserta un documento
 ```
 db.<collection_name>.insert({"name":"foobarfoo"})
@@ -214,6 +227,8 @@ $lt   = Less Than
 $lte  = Less Than or Equal
 $in   = In
 $nin  = No In
+$and  = && 
+$or   = || 
 ```
 
 #### Examples 
@@ -260,7 +275,7 @@ Devuelve los objectos de las collecion que tengan name.last mayor a U
 db.<collection_name>.find({"name.last":{"$gt":"U"}})
 ```
 
-Consulta $in y $nin
+Consulta con $in y $nin
 Devuelve los objetos de la collecion que tengan dentro de name.first Lea y Darla
 ```
 db.<collection_name>.find({"name.last":{"$in":["Lea", "Darla"]}})
@@ -269,5 +284,17 @@ db.<collection_name>.find({"name.last":{"$in":["Lea", "Darla"]}})
 Devuelve los objetos de la collecion que no tengan dentro de name.first Lea y Darla
 ```
 db.<collection_name>.find({"name.last":{"$nin":["Lea", "Darla"]}})
+```
+
+Consulta con $and y $or
+
+Devuelve los valores mayores o iguales a 18 y menores o iguales 25 
+```
+db.<collection_name>.find({"$and": [{"age":{"$lte":25}}, {"age":{"$gte":18}}]})
+```
+
+Devuelve los valores menores o iguales a 18 o color de ojos Azul 
+```
+db.<collection_name>.find({"$or": [{"eyeColor":{"$eq":"blue"}}, {"age":{"$lte":18}}]})
 ```
 
