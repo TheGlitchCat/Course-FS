@@ -1,0 +1,17 @@
+taller
+importar queries.json y hacer las siguientes consultas:
+1. Explorar los datos
+2. Manipular los datos (Update, Delete)
+3. Borrar la DB y volver a cargar queries.json para el punto 4.
+4. Usar operadores para:
+	- isActive
+	- age
+	- eyeColor
+	- company
+	- balance
+	- registered
+	- latitude
+	- longitude
+	- tags
+	- friends
+	- favoriteFruit

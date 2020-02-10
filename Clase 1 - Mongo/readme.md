@@ -134,6 +134,11 @@ Cuenta los objetos de la coleccion
 db.<collection_name>.find().count()
 ```
 
+Organiza los objetos de la coleccion por llave (-1: Desc, 1: Asc)
+```
+db.<collection_name>.find().sort({"<key>": -1})
+```
+
 Lista los objetos de la colección donde age = 29
 ```
 db.<collection_name>.find( { age:29 } )
@@ -207,6 +212,8 @@ $gt   = Grater than
 $gte  = Grater Than or Equal
 $lt   = Less Than
 $lte  = Less Than or Equal
+$in   = In
+$nin  = No In
 ```
 
 #### Examples 
@@ -239,5 +246,28 @@ db.<collection_name>.find({"age":{"$lt":27}})
 Devuelve los objectos de las collecion que tengan age menor o igual a 27
 ```
 db.<collection_name>.find({"age":{"$lte":27}})
+```
+
+Consulta Mixta
+Devuelve los objectos de las collecion que tengan age mayor a 30 y menor a 50
+```
+db.<collection_name>.find({"age":{"$gt":30, "$lt":50}})
+```
+
+Consulta por String
+Devuelve los objectos de las collecion que tengan name.last mayor a U 
+```
+db.<collection_name>.find({"name.last":{"$gt":"U"}})
+```
+
+Consulta $in y $nin
+Devuelve los objetos de la collecion que tengan dentro de name.first Lea y Darla
+```
+db.<collection_name>.find({"name.last":{"$in":["Lea", "Darla"]}})
+```
+
+Devuelve los objetos de la collecion que no tengan dentro de name.first Lea y Darla
+```
+db.<collection_name>.find({"name.last":{"$nin":["Lea", "Darla"]}})
 ```
 
