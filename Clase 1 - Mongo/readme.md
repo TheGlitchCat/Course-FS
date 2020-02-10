@@ -129,6 +129,11 @@ lista los objetos de la coleccion
 db.<collection_name>.find()
 ```
 
+Cuenta los objetos de la coleccion
+```
+db.<collection_name>.find().count()
+```
+
 Lista los objetos de la colección donde age = 29
 ```
 db.<collection_name>.find( { age:29 } )
@@ -186,5 +191,53 @@ db.dropDatabase()
 Sale de la terminal de mongo (ctrl-c)
 ```
 exit / quit()
+```
+
+importar un archivo .json
+```
+mongoimport --jsonArray --db <db_name> --collection <collection_name> --file <path>
+```
+
+### Operators
+
+```
+$eq   = Equal 
+$ne   = no Equal
+$gt   = Grater than
+$gte  = Grater Than or Equal
+$lt   = Less Than
+$lte  = Less Than or Equal
+```
+
+#### Examples 
+
+Devuelve los objectos de las collecion que tengan age igual a 27
+```
+db.<collection_name>.find({"age":{"$eq":27}})
+```
+
+Devuelve los objectos de las collecion que tengan age diferente a 27
+```
+db.<collection_name>.find({"age":{"$ne":27}})
+```
+
+Devuelve los objectos de las collecion que tengan age mayor a 27
+```
+db.<collection_name>.find({"age":{"$gt":27}})
+```
+
+Devuelve los objectos de las collecion que tengan age mayor o igual a 27
+```
+db.<collection_name>.find({"age":{"$gte":27}})
+```
+
+Devuelve los objectos de las collecion que tengan age menor a 27
+```
+db.<collection_name>.find({"age":{"$lt":27}})
+```
+
+Devuelve los objectos de las collecion que tengan age menor o igual a 27
+```
+db.<collection_name>.find({"age":{"$lte":27}})
 ```
 
