@@ -211,9 +211,14 @@ Sale de la terminal de mongo (ctrl-c)
 exit / quit()
 ```
 
-importar un archivo .json
+Importar un archivo .json
 ```
 mongoimport --jsonArray --db <db_name> --collection <collection_name> --file <path>
+```
+
+Exportar un archivo .json
+```
+mongoexport --jsonArray --collection <collection_name> --db <db_name> --out <path/filename.json>
 ```
 
 ### Operators
