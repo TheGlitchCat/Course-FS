@@ -74,96 +74,96 @@ MongoDB guarda los documentos BSON en colecciones, y las colecciones se almacena
 
 ### Basic Commands
 
-Muestra los comandos basicos y ayuda
+**Muestra los comandos basicos y ayuda**
 ```
 help
 ```
 
-Muestra las bases de datos
+**Muestra las bases de datos**
 ```
 show dbs
 ```
 
-Muestra las colecciones en la base de datos actual
+**Muestra las colecciones en la base de datos actual**
 ```
 show collections
 ```
 
-Muestra los usuarios de la base de datos actual
+**Muestra los usuarios de la base de datos actual**
 ```
 show users
 ```
 
-Selecciona la base de datos a usar (O la crea)
+**Selecciona la base de datos a usar (O la crea)**
 ```
 use <db_name> 
 ```
 
-Muestra las bases de datos
+**Muestra las bases de datos**
 ```
 show dbs
 ```
 
-Crea un colección
+**Crea un colección**
 ```
 db.createCollection("<name>")
 ```
 
-Obtiene la colección
+**Obtiene la colección**
 ```
 db.getCollection("<collection_name>")
 ```
 
-Borra una colección
+**Borra una colección**
 ```
 db.<collection_name>.drop()
 ```
 
-lista los objetos de la coleccion
+**lista los objetos de la coleccion**
 ```
 db.version()
 ```
 
-lista los objetos de la coleccion
+**lista los objetos de la coleccion**
 ```
 db.<collection_name>.find()
 ```
 
-Cuenta los objetos de la coleccion
+**Cuenta los objetos de la coleccion**
 ```
 db.<collection_name>.find().count()
 ```
 
-Organiza los objetos de la coleccion por llave (-1: Desc, 1: Asc)
+**Organiza los objetos de la coleccion por llave (-1: Desc, 1: Asc)**
 ```
 db.<collection_name>.find().sort({"<key>": -1})
 ```
 
-Lista los objetos de la colección donde age = 29
+**Lista los objetos de la colección donde age = 29**
 ```
 db.<collection_name>.find( { age:29 } )
 ```
 
-Busqueda en objetos hijos
-Busca en el objeto usando un objeto que tenga atributos first = Hollie y last = Boone
+**Busqueda en objetos hijos**
+*Busca en el objeto usando un objeto que tenga atributos first = Hollie y last = Boone*
 ```
 db.<collection_name>.find({"name":{"first":"Hollie", "last":"Boone"}})
 ```
 
-Busqueda en objetos Array
-Busca en el objeto usando un array que tenga atributos ["Action","Drama","Sci-fi"]
+**Busqueda en objetos Array**
+*Busca en el objeto usando un array que tenga atributos ["Action","Drama","Sci-fi"]*
 ```
 db.<collection_name>.find({"movies":["Action","Drama","Sci-fi"]})
 ```
 
 
-Inserta un documento
+**Inserta un documento**
 ```
 db.<collection_name>.insert({"name":"foobarfoo"})
 db.<collection_name>.insertOne({"name":"foobarfoo2"})
 ```
 
-Inserta multiples documentos
+**Inserta multiples documentos**
 ```  
 db.<collection_name>.insertMany(
     [  
@@ -185,38 +185,38 @@ db.<collection_name>.insertMany(
 db.<collection_name>.insert([{},{},{},{}])
 ```
 
-Actualiza un dato de la colección
+**Actualiza un dato de la colección**
 ```
 db.<collection_name>.update(SELECTIOIN_CRITERIA, UPDATED_DATA)  
 db.<collection_name>.update({'course':'JavaScript'},{$set:{'course':'JS'}})  
 ```
 
-Borra todos los datos de la colección
+**Borra todos los datos de la colección**
 ```
 db.<collection_name>.remove({})
 ```
 
-Borra todos los datos que cumplan la condición
+**Borra todos los datos que cumplan la condición**
 ```
 db.<collection_name>.remove( { catergory : "programming language" } )  
 ```
 
-Borra la base de datos en uso
+**Borra la base de datos en uso**
 ```
 db.dropDatabase()
 ```
 
-Sale de la terminal de mongo (ctrl-c)
+**Sale de la terminal de mongo (ctrl-c)**
 ```
 exit / quit()
 ```
 
-Importar un archivo .json
+**Importar un archivo .json**
 ```
 mongoimport --jsonArray --db <db_name> --collection <collection_name> --file <path>
 ```
 
-Exportar un archivo .json
+**Exportar un archivo .json**
 ```
 mongoexport --jsonArray --collection <collection_name> --db <db_name> --out <path/filename.json>
 ```
@@ -238,67 +238,67 @@ $or   = ||
 
 #### Examples 
 
-Devuelve los objectos de las collecion que tengan age igual a 27
+**Devuelve los objectos de las collecion que tengan age igual a 27**
 ```
 db.<collection_name>.find({"age":{"$eq":27}})
 ```
 
-Devuelve los objectos de las collecion que tengan age diferente a 27
+**Devuelve los objectos de las collecion que tengan age diferente a 27**
 ```
 db.<collection_name>.find({"age":{"$ne":27}})
 ```
 
-Devuelve los objectos de las collecion que tengan age mayor a 27
+**Devuelve los objectos de las collecion que tengan age mayor a 27**
 ```
 db.<collection_name>.find({"age":{"$gt":27}})
 ```
 
-Devuelve los objectos de las collecion que tengan age mayor o igual a 27
+**Devuelve los objectos de las collecion que tengan age mayor o igual a 27**
 ```
 db.<collection_name>.find({"age":{"$gte":27}})
 ```
 
-Devuelve los objectos de las collecion que tengan age menor a 27
+**Devuelve los objectos de las collecion que tengan age menor a 27**
 ```
 db.<collection_name>.find({"age":{"$lt":27}})
 ```
 
-Devuelve los objectos de las collecion que tengan age menor o igual a 27
+**Devuelve los objectos de las collecion que tengan age menor o igual a 27**
 ```
 db.<collection_name>.find({"age":{"$lte":27}})
 ```
 
-Consulta Mixta
-Devuelve los objectos de las collecion que tengan age mayor a 30 y menor a 50
+**Consulta Mixta**
+*Devuelve los objectos de las collecion que tengan age mayor a 30 y menor a 50*
 ```
 db.<collection_name>.find({"age":{"$gt":30, "$lt":50}})
 ```
 
-Consulta por String
-Devuelve los objectos de las collecion que tengan name.last mayor a U 
+**Consulta por String**
+**Devuelve los objectos de las collecion que tengan name.last mayor a U**
 ```
 db.<collection_name>.find({"name.last":{"$gt":"U"}})
 ```
 
-Consulta con $in y $nin
-Devuelve los objetos de la collecion que tengan dentro de name.first Lea y Darla
+**Consulta con $in y $nin**
+**Devuelve los objetos de la collecion que tengan dentro de name.first Lea y Darla**
 ```
 db.<collection_name>.find({"name.last":{"$in":["Lea", "Darla"]}})
 ```
 
-Devuelve los objetos de la collecion que no tengan dentro de name.first Lea y Darla
+**Devuelve los objetos de la collecion que no tengan dentro de name.first Lea y Darla**
 ```
 db.<collection_name>.find({"name.last":{"$nin":["Lea", "Darla"]}})
 ```
 
-Consulta con $and y $or
+**Consulta con $and y $or**
 
-Devuelve los valores mayores o iguales a 18 y menores o iguales 25 
+**Devuelve los valores mayores o iguales a 18 y menores o iguales 25**
 ```
 db.<collection_name>.find({"$and": [{"age":{"$lte":25}}, {"age":{"$gte":18}}]})
 ```
 
-Devuelve los valores menores o iguales a 18 o color de ojos Azul 
+**Devuelve los valores menores o iguales a 18 o color de ojos Azul**
 ```
 db.<collection_name>.find({"$or": [{"eyeColor":{"$eq":"blue"}}, {"age":{"$lte":18}}]})
 ```
