@@ -79,19 +79,9 @@ MongoDB guarda los documentos BSON en colecciones, y las colecciones se almacena
 help
 ```
 
-**Muestra las bases de datos**
-```
-show dbs
-```
-
 **Muestra las colecciones en la base de datos actual**
 ```
 show collections
-```
-
-**Muestra los usuarios de la base de datos actual**
-```
-show users
 ```
 
 **Selecciona la base de datos a usar (O la crea)**
