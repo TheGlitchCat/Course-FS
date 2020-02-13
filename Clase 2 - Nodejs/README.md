@@ -72,6 +72,10 @@ Cambiamos nuestro Start en package.json:
 ...
 ```
 
+Ejecutamos nuestra aplicación:
+```
+npm start
+```
 
 
 #### Glosario:
