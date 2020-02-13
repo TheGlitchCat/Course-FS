@@ -1,8 +1,9 @@
 # Nodejs
 
 ### Instalación
-[Nodejs](https://nodejs.org/es/download/)
-[Postman](https://www.postman.com/downloads/)
+- [Nodejs](https://nodejs.org/es/download/)
+- [Postman](https://www.postman.com/downloads/)
+- [API](https://jsonplaceholder.typicode.com/posts)
 
 Comprobación:
 ```
@@ -42,15 +43,38 @@ y esto nos creara el siguiente documento:
 }
 
 ```
-Creamos **index.js**
 
-y ejecutamos el siguiente comando para instalar [express](https://expressjs.com/es/4x/api.html):
+Creamos **index.js**
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello world from express');
+});
+
+app.listen(2020);
 ```
-npm install express --save
+
+y ejecutamos los siguientes comandos para instalar [express](https://expressjs.com/es/4x/api.html) y [nodemon](https://www.npmjs.com/package/nodemon):
 ```
+npm install -g express --save
+npm install -g nodemon --save
+```
+
+Cambiamos nuestro Start en package.json:
+```
+...
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+...
+```
+
 
 
 #### Glosario:
-API: Application Programming Interface
-REST: Representational State Transfer 
-JSON: Java Script Object Notation
+- API: Application Programming Interface
+- REST: Representational State Transfer 
+- JSON: Java Script Object Notation
