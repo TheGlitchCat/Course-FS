@@ -2,6 +2,7 @@
 
 ### Instalación
 [Nodejs](https://nodejs.org/es/download/)
+[Postman](https://www.postman.com/downloads/)
 
 Comprobación:
 ```
@@ -31,13 +32,25 @@ y esto nos creara el siguiente documento:
   "name": "<project name>",
   "version": "<version>",
   "description": "",
-  "main": "<main js>",
+  "main": "<index.js>",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node <server.js>"
+    "start": "node <index.js>"
   },
   "author": "<author>",
   "license": "ISC"
 }
 
 ```
+Creamos **index.js**
+
+y ejecutamos el siguiente comando para instalar [express](https://expressjs.com/es/4x/api.html):
+```
+npm install express --save
+```
+
+
+#### Glosario:
+API: Application Programming Interface
+REST: Representational State Transfer 
+JSON: Java Script Object Notation
