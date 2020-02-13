@@ -1,10 +1,11 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
 app.use(express.json());
 
 var port = process.env.port || 3000;
-
+var files = path.join(__dirname, '/views');
 
 var data = [
     {
@@ -36,6 +37,10 @@ var data = [
 
 app.get('/', (req, res) => {
     res.send('Hello world from express');
+});
+
+app.get('/home', (req,res) => {
+    res.sendFile(files + '/index.html');
 });
 
 app.get('/api/cars', (req, res) => {
