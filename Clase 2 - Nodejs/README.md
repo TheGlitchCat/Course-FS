@@ -22,7 +22,7 @@ node '.\Primer Programa\first.js'
 ### Modulos 
 Los modulos son son paquetes o librerias de código que se pueden importar a nuestros proyectos.
 
-### Iniciar un proyecto
+### Iniciar un proyecto en express
 Para iniciar un proyecto podemos ejecutar el siguiente comando:
 ```
 npm init
