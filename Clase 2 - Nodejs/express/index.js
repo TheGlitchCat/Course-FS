@@ -7,6 +7,9 @@ app.use(express.json());
 var port = process.env.port || 3000;
 var files = path.join(__dirname, '/views');
 
+var data = require('./data');
+
+/*
 var data = [
     {
         name:'Serie 1',
@@ -34,6 +37,7 @@ var data = [
         company:'Fiat'
     }
 ];
+*/
 
 app.get('/', (req, res) => {
     res.send('Hello world from express');
@@ -74,7 +78,9 @@ app.get('/api/cars/:company', (req, res) => {
 
 app.post('/api/cars', (req,res) => {
     console.log(req.body);
+    var id = data.length;
     var car = {
+        id: data.length,
         name: req.body.name,
         year: req.body.year,
         company: req.body.company

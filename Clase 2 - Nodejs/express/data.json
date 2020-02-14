@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "name": "Serie 1",
+        "year": 2018,
+        "company": "BMW"
+    },
+    {
+        "id": 1,
+        "name": "V8",
+        "year": 2019,
+        "company": "Audi"
+    },
+    {
+        "id": 2,
+        "name": "GTC4Lusso",
+        "year": 2020,
+        "company": "Ferrari"
+    },
+    {
+        "id": 3,
+        "name": "RX-8",
+        "year": 2016,
+        "company": "Mazda"
+    },
+    {
+        "id": 4,
+        "name": "500X 2019",
+        "year": 2019,
+        "company": "Fiat"
+    }
+]
